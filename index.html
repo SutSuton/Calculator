@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <div class="calculator-body">
+        <div class="button" id=display></div>
+        <button onclick="clearAll();" class="button clear" id="ac">AC</button>
+        <button class="button clear" id="del">DEL</button>
+        <button class="button operator" id="multiply">×</button>
+        <button class="button operator" id="divide">÷</button>
+        <button onclick="addNumber(7);" class="button number" id="seven">7</button>
+        <button onclick="addNumber(8);" class="button number" id="eight">8</button>
+        <button onclick="addNumber(9);" class="button number" id="nine">9</button>
+        <button onclick="minusButton();" class="button operator" id="subtract">-</button>
+        <button onclick="addNumber(4);" class="button number" id="four">4</button>
+        <button onclick="addNumber(5);" class="button number" id="five">5</button>
+        <button onclick="addNumber(6);" class="button number" id="six">6</button>
+        <button onclick="plusButton();" class="button operator" id="add">+</button>
+        <button onclick="addNumber(1);" class="button number" id="one">1</button>
+        <button onclick="addNumber(2);" class="button number" id="two">2</button>
+        <button onclick="addNumber(3);" class="button number" id="three">3</button>
+        <button onclick="operate(savedValue, displayValue, operator);" class="button operator" id="equals">=</button>
+        <button onclick="addNumber(0);" class="button number" id="zero">0</button>
+        <dbutton class="button number" id="point">.</button>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+.calculator-body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 10px;
+    height: 600px;
+    width: 400px;
+    margin: auto;
+}
+.button {
+    border: 1px solid black;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 30px;
+}
+.number {
+    background-color: grey;
+}
+.operator {
+    background-color: orangered;
+    font-size: 40px;
+}
+.clear {
+    background-color: red;
+}
+#display {
+    grid-column: 1 / 5;
+    text-align: end;
+}
+#equals {
+    grid-row: 5 / 7;
+    grid-column: 4 / 5;
+}
+#zero {
+    grid-column: 1 / 3;
+}

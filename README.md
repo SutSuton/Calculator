@@ -1,0 +1,1 @@
+The final project of the foundations course. I have a relatively firm grasp of what is needed in this task. My knowledge of arrays and objects is not quite perfect yet but I don't see myself needing to use them too much in this project.
