@@ -3,9 +3,10 @@ let displayValue = "";
 let sign = "";
 let savedValue = "";
 
+
 // operator functions
 const addNumber = function(number) {
-    if ((displayValue == "" && savedValue == "") || (displayValue != "" && savedValue != "" && displayValue == savedValue)) {
+    if ((!displayValue && !savedValue) || (displayValue && savedValue && displayValue == savedValue)) {
         display.textContent = number;
         displayValue = number;
     } else {
@@ -14,10 +15,10 @@ const addNumber = function(number) {
     }
 }
 const addSign = function(operator) {
-    if (savedValue == "") {
+    if (!savedValue) {
         sign = operator;
         savedValue = displayValue;
-    } else if (sign == "") {
+    } else if (!sign) {
         sign = operator;
     } else {
         display.textContent = sign(displayValue, savedValue);
@@ -41,10 +42,14 @@ const divide = function(a, b) {
     return a / b;
 }
 const operate = function(a, b, operator) {
-    display.textContent = operator(a, b);
-    displayValue = operator(a, b);
-    savedValue = operator(a, b);
-    sign = "";
+    if (!sign) {
+        return;
+    } else {
+        display.textContent = operator(a, b);
+        displayValue = operator(a, b);
+        savedValue = operator(a, b);
+        sign = "";
+    }
 }
 
 // display functions
@@ -54,3 +59,18 @@ const clearAll = function() {
     savedValue = "";
 }
 
+const deleteLast = function() {
+    display.textContent = display.textContent.slice(0, -1);
+    displayValue = display.textContent;
+}
+
+const addPoint = function() {
+    if (displayValue.toString().search(/\./) > 0) {
+        return;
+    } else if (!displayValue) {
+        return;
+    } else {
+        display.textContent = display.textContent + ".";
+        displayValue = display.textContent;
+    }  
+}

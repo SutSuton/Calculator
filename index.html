@@ -12,7 +12,7 @@
     <div class="calculator-body">
         <div class="button" id=display></div>
         <button onclick="clearAll();" class="button clear" id="ac">AC</button>
-        <button class="button clear" id="del">DEL</button>
+        <button onclick="deleteLast();" class="button clear" id="del">DEL</button>
         <button onclick="addSign(multiply);"class="button operator" id="multiply">×</button>
         <button onclick="addSign(divide);"class="button operator" id="divide">÷</button>
         <button onclick="addNumber(7);" class="button number" id="seven">7</button>
@@ -28,7 +28,7 @@
         <button onclick="addNumber(3);" class="button number" id="three">3</button>
         <button onclick="operate(savedValue, displayValue, sign);" class="button operator" id="equals">=</button>
         <button onclick="addNumber(0);" class="button number" id="zero">0</button>
-        <dbutton class="button number" id="point">.</button>
+        <dbutton onclick="addPoint();" class="button number" id="point">.</button>
     </div>
     
 </body>
