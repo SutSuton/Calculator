@@ -1,19 +1,30 @@
 const display = document.getElementById("display");
-let displayValue = display.textContent;
-let operator = "";
+let displayValue = "";
+let sign = "";
 let savedValue = "";
 
 // operator functions
-const plusButton = function() {
-    savedValue = display.textContent;
-    display.textContent = "";
-    operator = add;
+const addNumber = function(number) {
+    if ((displayValue == "" && savedValue == "") || (displayValue != "" && savedValue != "" && displayValue == savedValue)) {
+        display.textContent = number;
+        displayValue = number;
+    } else {
+        display.textContent = "" + displayValue + number;
+        displayValue = "" + displayValue + number;
+    }
 }
-
-const minusButton = function() {
-    savedValue = display.textContent;
-    display.textContent = "";
-    operator = subtract;
+const addSign = function(operator) {
+    if (savedValue == "") {
+        sign = operator;
+        savedValue = displayValue;
+    } else if (sign == "") {
+        sign = operator;
+    } else {
+        display.textContent = sign(displayValue, savedValue);
+        savedValue = display.textContent;
+        displayValue = display.textContent;
+        sign = operator;
+    }
 }
 
 // numerical functions
@@ -31,14 +42,13 @@ const divide = function(a, b) {
 }
 const operate = function(a, b, operator) {
     display.textContent = operator(a, b);
-    operator = "";
+    displayValue = operator(a, b);
+    savedValue = operator(a, b);
+    sign = "";
 }
 
 // display functions
-const addNumber = function(n) {
-    display.textContent = "" + display.textContent + n;
-    displayValue = display.textContent;
-}
+
 
 const clearAll = function() {
     display.textContent = "";
