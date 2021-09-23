@@ -48,10 +48,9 @@ const operate = function(a, b, operator) {
 }
 
 // display functions
-
-
 const clearAll = function() {
     display.textContent = "";
-    displayValue = display.textContent;
+    displayValue = "";
+    savedValue = "";
 }
 
